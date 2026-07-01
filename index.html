@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Alumnos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                🎓 Sistema de Gestión de Alumnos
+            </a>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Administración de Alumnos</h3>
+            </div>
+            <div class="card-body">
+                <div class="d-flex gap-3 mb-4">
+                    <button id="btnIniciar" class="btn btn-success">
+                        🚀 Iniciar sistema
+                    </button>
+                    <button id="btnListar" class="btn btn-primary">
+                        📋 Listar alumnos
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped table-bordered align-middle">
+                        <thead class="table-dark text-center">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Edad</th>
+                                <th>Promedio</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaAlumnos" class="text-center">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer text-center text-muted">
+                Sistema de Gestión de Alumnos © 2026
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/validaciones.js"></script>
+    <script src="assets/js/alumnos.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
