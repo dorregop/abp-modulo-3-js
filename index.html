@@ -5,58 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Gestión de Alumnos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                🎓 Sistema de Gestión de Alumnos
-            </a>
-        </div>
-    </nav>
-    <div class="container mt-5">
-        <div class="card shadow-lg border-0 rounded-4">
-            <div class="card-header bg-primary text-white">
-                <h3 class="mb-0">Administración de Alumnos</h3>
+<body>
+    <div class="container py-5">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white text-center">
+                <h1 class="mb-0">
+                    Sistema de Gestión de Alumnos
+                </h1>
             </div>
             <div class="card-body">
-                <div class="d-flex gap-3 mb-4">
-                    <button id="btnIniciar" class="btn btn-success">
-                        🚀 Iniciar sistema
+                <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                    <button id="btnAgregar" class="btn btn-success">
+                        Agregar alumno
                     </button>
-                    <button id="btnListar" class="btn btn-primary">
-                        📋 Listar alumnos
+                    <button id="btnBuscar" class="btn btn-primary">
+                        Buscar
+                    </button>
+                    <button id="btnEliminar" class="btn btn-danger">
+                        Eliminar
+                    </button>
+                    <button id="btnEstadisticas" class="btn btn-warning">
+                        Estadísticas
                     </button>
                 </div>
+                <div class="alert alert-info text-center fw-bold">
+                    <span id="cantidadAlumnos"></span>
+                </div>
                 <div class="table-responsive">
-                    <table class="table table-hover table-striped table-bordered align-middle">
-                        <thead class="table-dark text-center">
+                    <table class="table table-hover table-striped table-bordered align-middle text-center">
+                        <thead class="table-dark">
                             <tr>
                                 <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
-                                <th>Edad</th>
                                 <th>Promedio</th>
                             </tr>
                         </thead>
-                        <tbody id="tablaAlumnos" class="text-center">
-                        </tbody>
+                        <tbody id="tablaAlumnos"></tbody>
                     </table>
                 </div>
-            </div>
-            <div class="card-footer text-center text-muted">
-                Sistema de Gestión de Alumnos © 2026
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/validaciones.js"></script>
     <script src="assets/js/alumnos.js"></script>
-    <script src="assets/js/menu.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 

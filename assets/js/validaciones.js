@@ -11,20 +11,6 @@ function pedirTexto(campo) {
     return texto.trim();
 }
 
-function pedirEdad() {
-    let edad;
-    do {
-        edad = Number(prompt("Ingrese la edad del alumno:\n(NOTA: Se debe ser mayor de edad " +
-            "para aplicar al curso)"));
-        if (isNaN(edad)) {
-            alert("Debe ingresar un número.");
-        } else if (edad < 18) {
-            alert("El alumno debe ser mayor de 18 años.");
-        }
-    } while (isNaN(edad) || edad < 18);
-    return edad;
-}
-
 function pedirPromedio() {
     let promedio;
     do {
@@ -56,4 +42,15 @@ function validarNombrePersona(texto) {
         }
     }
     return true;
+}
+
+function pedirNumero(mensaje) {
+    let numero;
+    do {
+        numero = Number(prompt(mensaje));
+        if (isNaN(numero)) {
+            alert("Debe ingresar un número.");
+        }
+    } while (isNaN(numero));
+    return numero;
 }
