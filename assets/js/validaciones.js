@@ -1,14 +1,27 @@
 function pedirTexto(campo) {
-    let texto;
-    let esValido;
-    do {
-        texto = prompt(`Ingrese el ${campo}:`);
-        esValido = validarNombrePersona(texto);
-        if (!esValido) {
-            alert(`${campo} inválido. Intente nuevamente.`);
+    while (true) {
+        const texto = prompt(`Ingrese el ${campo}:`);
+        if (texto === null) {
+            return null;
         }
-    } while (!esValido);
-    return texto.trim();
+        if (esTextoValido(texto)) {
+            return texto.trim();
+        }
+        alert("Texto inválido.");
+    }
+}
+
+function esTextoValido(texto) {
+    texto = texto.trim();
+    if (texto.length === 0) {
+        return false;
+    }
+    for (const caracter of texto) {
+        if (!isNaN(caracter) && caracter !== " ") {
+            return false;
+        }
+    }
+    return true;
 }
 
 function pedirPromedio() {
@@ -44,13 +57,17 @@ function validarNombrePersona(texto) {
     return true;
 }
 
-function pedirNumero(mensaje) {
-    let numero;
-    do {
-        numero = Number(prompt(mensaje));
-        if (isNaN(numero)) {
-            alert("Debe ingresar un número.");
+function pedirId() {
+    while (true) {
+        const entrada = prompt("Ingrese el ID del alumno:");
+        if (entrada === null) {
+            return null;
         }
-    } while (isNaN(numero));
-    return numero;
+        const id = Number(entrada);
+        if (isNaN(id) || id <= 0) {
+            alert("Debe ingresar un ID válido.");
+            continue;
+        }
+        return id;
+    }
 }
