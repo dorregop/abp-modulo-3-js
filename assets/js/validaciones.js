@@ -25,36 +25,24 @@ function esTextoValido(texto) {
 }
 
 function pedirPromedio() {
-    let promedio;
-    do {
-        promedio = Number(prompt(
+    while (true) {
+        const entrada = prompt(
             "Ingrese el promedio del alumno:\n(NOTA: Las calificaciones van de 1.0 a 7.0)"
-        ));
+        );
+        if (entrada === null) {
+            return null;
+        }
+        const promedio = Number(entrada);
         if (isNaN(promedio)) {
             alert("Debe ingresar un número.");
-        } else if (promedio < 1 || promedio > 7) {
-            alert("El promedio está fuera del rango [1.0 - 7.0]");
-        } else {
-            promedio = Number(promedio.toFixed(1));
+            continue;
         }
-    } while (isNaN(promedio) || promedio < 1 || promedio > 7);
-    return promedio;
-}
-
-function validarNombrePersona(texto) {
-    if (texto === null) {
-        return false;
-    }
-    texto = texto.trim();
-    if (texto === "") {
-        return false;
-    }
-    for (const caracter of texto) {
-        if (!isNaN(caracter) && caracter !== " ") {
-            return false;
+        if (promedio < 1 || promedio > 7) {
+            alert("El promedio debe estar entre 1.0 y 7.0.");
+            continue;
         }
+        return Number(promedio.toFixed(1));
     }
-    return true;
 }
 
 function pedirId() {
